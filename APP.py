@@ -1,10 +1,10 @@
 import streamlit as st
 
 #Mengatur judul tab browser
-st.set_page_cofig(page_title="Aplikasi Pertamaku", page_icon="+")
+st.set_page_config(page_title="Aplikasi Pertamaku", page_icon="+")
 
 #Menampilkan judul dan teks di web
-st.tittle("Aplikasi Stramlit Pertamaku")
+st.tittle("🎉 Aplikasi Streamlit Pertamaku!")
 st.write("Halo dunia! Jika kamu bisa melihat halaman ini, berarti kamu sudah **BERHASIL** meng-upload dan mendeploy aplikasi Streamlit dari Github.")
 
 st.divider() # Garis pembatas
