@@ -27,7 +27,7 @@ st.markdown("---")
 
 # --- BAGIAN 1: INPUT NAMA & VALIDASI (Dengan Tombol Oke) ---
 with st.form(key="form_nama"):
-    nama_input = st.text_input("Masukkan nama kamu dulu dong buat konfirmasi:", placeholder="Contoh: Budi")
+    nama_input = st.text_input("Masukkan nama kamu dulu dong buat konfirmasi:")
     tombol_oke = st.form_submit_button(label="Oke")
 
 # Logika ketika tombol Oke diklik
@@ -62,15 +62,21 @@ if st.session_state.buka_kado:
         )
         st.caption(f"~ Dari sahabat terbaikmu untuk {st.session_state.nama_terkonfirmasi} ❤️")
 
-    # 2. Galeri Foto / Memori (Versi Ringkas Tanpa Else)
+    # 2. Galeri Foto / Memori (Dengan Pengecekan Aman)
     st.markdown("### 📸 Kilas Balik Kebersamaan")
     col1, col2 = st.columns(2)
     
     with col1:
-        st.image("Fotbar.jpeg", caption="Waktu kita Foto bareng", use_container_width=True)
+        if os.path.exists("Fotbar 1.jpg"):
+            st.image("Fotbar 1.jpg", caption="Waktu kita Foto bareng", use_container_width=True)
+        else:
+            st.warning("⚠️ File 'Fotbar 1.jpg' belum dimasukkan ke folder project.")
 
     with col2:
-        st.image("Tukar Kado.jpeg", caption="Waktu tukar kado ultah", use_container_width=True)
+        if os.path.exists("Tukar Kado 1.jpg"):
+            st.image("Tukar Kado 1.jpg", caption="Waktu tukar kado ultah", use_container_width=True)
+        else:
+            st.warning("⚠️ File 'Tukar Kado 1.jpg' belum dimasukkan ke folder project.")
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
