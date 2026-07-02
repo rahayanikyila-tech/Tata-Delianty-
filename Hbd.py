@@ -42,7 +42,7 @@ if st.session_state.buka_kado:
     # 1. Kartu Ucapan Digital
     st.markdown("### 💌 Ucapan Spesial Buat Kamu")
     with st.container(border=True):
-        st.subheader(f"Selamat Ulang Tahun yang ke-X, {nama_teman}! 🥳")
+        st.subheader(f"Selamat Ulang Tahun yang ke-19, {nama_teman}! 🥳")
         st.write(
             """
             Semoga di umur yang baru ini, kamu makin sukses, sehat selalu, 
@@ -57,21 +57,21 @@ if st.session_state.buka_kado:
     col1, col2 = st.columns(2)
     with col1:
         # Ganti dengan url foto asli atau file lokal kamu
-        st.image("https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500", 
-                 caption="Waktu kita seru-seruan bareng")
+        st.image("c:\Users\asust\Downloads\Fotbar.jpeg", 
+                 caption="Waktu kita Foto bareng")
     with col2:
-        st.image("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500", 
-                 caption="Satu tahun ke depan harus lebih banyak petualangan!")
+        st.image("c:\Users\asust\Downloads\Tukar Kado.jpeg", 
+                 caption="Waktu tukar kado ultah bareng :)!")
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
     pertanyaan = st.radio(
-        "Apa makanan favorit kita kalau lagi nongkrong bareng?",
-        ["Seblak level 5 (sampe nangis)", "Indomie Warmindo", "Nasi Goreng pinggir jalan", "Diet, ga makan apa-apa"]
+        "Apa makanan / minuman favorit kita kalau lagi nongkrong bareng?",
+        ["Seblak", "Es Teh", "Nasi Goreng", "Es Campur", "Siomay", "Es Jeruk"]
     )
     
     if st.button("Kirim Jawaban"):
-        if "Warmindo" in pertanyaan or "Seblak" in pertanyaan: # Sesuaikan dengan jawaban asli kalian
+        if "Es Teh" in pertanyaan or "Seblak" in pertanyaan: # Sesuaikan dengan jawaban asli kalian
             st.balloons()
             st.success("Wkwk bener banget! Emang sefrekuensi kita 🍜😂")
         else:
