@@ -72,8 +72,8 @@ if st.session_state.buka_kado:
             st.image("Fotbar 1.jpg", caption="Waktu kita Foto bareng saat nunggu jemputan pulang sekolah ♡", use_container_width=True)
 
     with col2:
-        if os.path.exists("c:\Users\asust\OneDrive\Documents\Kado Ultah\Tukar Kado 1.jpg"):
-            st.image("c:\Users\asust\OneDrive\Documents\Kado Ultah\Tukar Kado 1.jpg", caption="Waktu tukar kado ultah bareng ♡", use_container_width=True)
+        if os.path.exists("Tukar Kado 1.jpg"):
+            st.image("Tukar Kado 1.jpg", caption="Waktu tukar kado ultah bareng ♡", use_container_width=True)
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
