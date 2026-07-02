@@ -69,14 +69,10 @@ if st.session_state.buka_kado:
     with col1:
         if os.path.exists("Fotbar 1.jpg"):
             st.image("Fotbar 1.jpg", caption="Waktu kita Foto bareng", use_container_width=True)
-        else:
-            st.warning("⚠️ File 'Fotbar 1.jpg' belum dimasukkan ke folder project.")
 
     with col2:
         if os.path.exists("Tukar Kado 1.jpg"):
             st.image("Tukar Kado 1.jpg", caption="Waktu tukar kado ultah", use_container_width=True)
-        else:
-            st.warning("⚠️ File 'Tukar Kado 1.jpg' belum dimasukkan ke folder project.")
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
