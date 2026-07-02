@@ -55,9 +55,9 @@ if st.session_state.buka_kado:
     col1, col2 = st.columns(2)
     with col1:
         # Ganti dengan url foto asli atau file lokal kamu
-        st.image("c:\Users\asust\Downloads\Fotbar.jpeg", caption="Waktu kita Foto bareng")
+        st.image(r"c:\Users\asust\Downloads\Fotbar.jpeg", caption="Waktu kita Foto bareng")
     with col2:
-        st.image("c:\Users\asust\Downloads\Tukar Kado.jpeg", caption="Waktu tukar kado ultah bareng :)!")
+        st.image(r"c:\Users\asust\Downloads\Tukar Kado.jpeg", caption="Waktu tukar kado ultah bareng :)!")
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
