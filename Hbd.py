@@ -1,4 +1,10 @@
 import streamlit as st
+import os
+
+if os.path.exists("Fotbar.jpeg"):
+    st.image("Fotbar.jpeg")
+else:
+    st.error("Fotbar.jpeg tidak ditemukan")
 
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
@@ -25,6 +31,12 @@ if 'buka_kado' not in st.session_state:
     st.session_state.buka_kado = False
 
 nama_teman = st.text_input("Masukkan nama kamu dulu dong buat konfirmasi:", placeholder="Contoh: Budi")
+
+if "nama" not in st.session_state:
+    st.session_state.nama = ""
+
+if nama_teman.strip():
+    st.session_state.nama = nama_teman
 
 if nama_teman.strip():
     st.success(f"Yess, bener ini buat kamu, {nama_teman}! ✨")
@@ -54,10 +66,14 @@ if st.session_state.buka_kado:
     st.markdown("### 📸 Kilas Balik Kebersamaan")
     col1, col2 = st.columns(2)
     with col1:
-        # Ganti dengan url foto asli atau file lokal kamu
-        st.image(r"c:\Users\asust\Downloads\Fotbar.jpeg", caption="Waktu kita Foto bareng")
+        st.image("Fotbar.jpeg",
+             caption="Waktu kita Foto bareng",
+             use_container_width=True)
+
     with col2:
-        st.image(r"c:\Users\asust\Downloads\Tukar Kado.jpeg", caption="Waktu tukar kado ultah bareng :)!")
+        st.image("Tukar Kado.jpeg",
+             caption="Waktu tukar kado ultah",
+             use_container_width=True)
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
