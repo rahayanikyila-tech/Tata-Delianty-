@@ -62,21 +62,15 @@ if st.session_state.buka_kado:
         )
         st.caption(f"~ Dari sahabat terbaikmu untuk {st.session_state.nama_terkonfirmasi} ❤️")
 
-    # 2. Galeri Foto / Memori (Dengan Pengecekan Aman)
+    # 2. Galeri Foto / Memori (Versi Ringkas Tanpa Else)
     st.markdown("### 📸 Kilas Balik Kebersamaan")
     col1, col2 = st.columns(2)
     
     with col1:
-        if os.path.exists("Fotbar.jpeg"):
-            st.image("Fotbar.jpeg", caption="Waktu kita Foto bareng", use_container_width=True)
-        else:
-            st.warning("⚠️ File 'Fotbar.jpeg' belum dimasukkan ke folder project.")
+        st.image("Fotbar.jpeg", caption="Waktu kita Foto bareng", use_container_width=True)
 
     with col2:
-        if os.path.exists("Tukar Kado.jpeg"):
-            st.image("Tukar Kado.jpeg", caption="Waktu tukar kado ultah", use_container_width=True)
-        else:
-            st.warning("⚠️ File 'Tukar Kado.jpeg' belum dimasukkan ke folder project.")
+        st.image("Tukar Kado.jpeg", caption="Waktu tukar kado ultah", use_container_width=True)
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
