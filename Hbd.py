@@ -1,6 +1,4 @@
-import streamlit as pd
 import streamlit as st
-import time
 
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
@@ -28,7 +26,7 @@ if 'buka_kado' not in st.session_state:
 
 nama_teman = st.text_input("Masukkan nama kamu dulu dong buat konfirmasi:", placeholder="Contoh: Budi")
 
-if nama_teman:
+if nama_teman.strip():
     st.success(f"Yess, bener ini buat kamu, {nama_teman}! ✨")
     
     # Tombol Utama Kejutan
@@ -46,22 +44,20 @@ if st.session_state.buka_kado:
         st.write(
             """
             Semoga di umur yang baru ini, kamu makin sukses, sehat selalu, 
-            dan semua cita-cita kamu tercapai. Makasih udah jadi teman yang luar biasa 
-            selama ini. Tetap jadi orang yang asyik dan random ya! 🌟
+            doa-doa mu dikabulkan dan semua cita-cita kamu tercapai. Makasih udah jadi teman yang luar biasa 
+            selama ini. Tetap jadi orang yang asyik dan seru ya! 🌟
             """
         )
-        st.caption("~ Dari sahabat terbaikmu 😎")
+        st.caption(f"~ Dari sahabat terbaikmu untuk {st.session_state.nama} ❤️")
 
     # 2. Galeri Foto / Memori (Opsional)
     st.markdown("### 📸 Kilas Balik Kebersamaan")
     col1, col2 = st.columns(2)
     with col1:
         # Ganti dengan url foto asli atau file lokal kamu
-        st.image("c:\Users\asust\Downloads\Fotbar.jpeg", 
-                 caption="Waktu kita Foto bareng")
+        st.image("c:\Users\asust\Downloads\Fotbar.jpeg", caption="Waktu kita Foto bareng")
     with col2:
-        st.image("c:\Users\asust\Downloads\Tukar Kado.jpeg", 
-                 caption="Waktu tukar kado ultah bareng :)!")
+        st.image("c:\Users\asust\Downloads\Tukar Kado.jpeg", caption="Waktu tukar kado ultah bareng :)!")
 
     # 3. Kuis Interaktif Mini
     st.markdown("### 🧩 Kuis Singkat: Seberapa Kenal Kita?")
@@ -71,7 +67,7 @@ if st.session_state.buka_kado:
     )
     
     if st.button("Kirim Jawaban"):
-        if "Es Teh" in pertanyaan or "Seblak" in pertanyaan: # Sesuaikan dengan jawaban asli kalian
+        if pertanyaan in ["Es Teh", "Seblak"]: # Sesuaikan dengan jawaban asli kalian
             st.balloons()
             st.success("Wkwk bener banget! Emang sefrekuensi kita 🍜😂")
         else:
@@ -79,6 +75,6 @@ if st.session_state.buka_kado:
 
     # 4. Pemutar Musik / Audio (Opsional)
     st.markdown("### 🎵 Backsound Biar Meriah")
+    st.audio("happy_birthday.mp3")
     # Kamu bisa masukkan file audio ulang tahun berformat .mp3 di sini
-    # st.audio("happy_birthday.mp3", start_time=0)
     st.info("💡 Kamu bisa putar lagu favorit kalian lewat Spotify sambil buka halaman ini!")
