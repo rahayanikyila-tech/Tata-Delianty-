@@ -105,7 +105,7 @@ if st.session_state.buka_kado:
 
     # 4. Pemutar Musik / Audio 
     st.markdown("### 🎵 Backsound Biar Meriah")
-    if os.path.exists("happy_birthday"):
-        st.audio("Happy Birthday (Piano Version).mp4", autoplay=True) 
+    if os.path.exists("Happy_Birthday Music.mpeg"):
+        st.audio("Happy_Birthday Music.mpeg", autoplay=True) 
     else:
-        st.info("💡 Hubungkan file musikmu dengan memberi nama 'happy_birthday.mp3' di folder yang sama agar lagu otomatis berputar!")
+        st.info("💡 Hubungkan file musikmu dengan memberi nama 'Happy_Birthday Music.mpeg' di folder yang sama agar lagu otomatis berputar!")
