@@ -105,7 +105,12 @@ if st.session_state.buka_kado:
 
     # 4. Pemutar Musik / Audio 
     st.markdown("### 🎵 Backsound Biar Meriah")
-    if os.path.exists("Happy_Birthday Music.mpeg"):
-        st.audio("Happy_Birthday Music.mpeg", autoplay=True) 
+    
+    # Nama file musik kamu di GitHub
+    nama_audio = "Happy_Birthday Music.mpeg"
+    
+    if os.path.exists(nama_audio):
+        # Format diatur ke audio/mpeg agar browser mengenali tipenya dengan baik
+        st.audio(nama_audio, format="audio/mpeg", autoplay=True)
     else:
-        st.info("💡 Hubungkan file musikmu dengan memberi nama 'Happy_Birthday Music.mpeg' di folder yang sama agar lagu otomatis berputar!")
+        st.info(f"💡 Hubungkan file musikmu dengan memberi nama '{nama_audio}' di folder GitHub yang sama agar lagu otomatis berputar!")
